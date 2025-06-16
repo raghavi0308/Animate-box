@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.sky {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b, #87CEEB);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Cloud Emojis */
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 5%;
+    font-size: 100px;
+    opacity: 0.8;
+    
+}
+
+.cloud {
+    position: absolute;
+    animation: moveClouds 10s linear infinite;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+}
+
+.cloud1 { left: 5%; top: 10%; }
+.cloud2 { left: 50%; top: 15%; }
+.cloud3 { left: 80%; top: 5%; }
+
+/* Cloud Movement */
+@keyframes moveClouds {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Mountain Silhouette */
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #3e2723, transparent);
+    clip-path: polygon(0% 100%, 20% 50%, 40% 80%, 60% 50%, 80% 80%, 100% 100%);
+}
+
+/* Balloon */
+.balloon-wrapper {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+.balloon {
+    font-size: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+}
+
+/* Movement */
+.move-left { left: 30%; }
+.move-right { left: 70%; }
+.move-up { top: 30%; }
+.move-down { top: 70%; }
+
+/* Controls */
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: lightgray;
+}
